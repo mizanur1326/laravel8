@@ -24,3 +24,4 @@ Route::get('about', [HomeController::class, 'about']);
 Route::get('students', [HomeController::class, 'students']);
 Route::get('contact', [HomeController::class, 'contact']);
 Route::post('abc', [HomeController::class, 'store']);
+Route::get('messages', [HomeController::class, 'messages']);

@@ -17,7 +17,7 @@
           <a class="nav-link" href="contact">CONTACT</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link" href="messages">MESSAGES</a>
         </li>
       </ul>
     </div>
