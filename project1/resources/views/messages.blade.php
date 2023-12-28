@@ -8,7 +8,7 @@
 
     <div class="container py-4">
         <h2>Messages List</h2>
-        <table style="border: 2px solid green; width:100%" >
+        <table class="table table-striped" >
             <thead>
                 <tr style="border: 1px solid black">
                     <td>ID</td>
