@@ -54,10 +54,55 @@ class HomeController extends Controller
         return redirect('contact')->with('msg', 'Message Inserted Successfully');
     }
 
+
+//Contact Messages
     public function messages(){
         $messages = ContactModel::all();
         $data['messages'] = $messages;
         return view('messages', $data);
+    }
+
+    public function delete($mid){
+        // echo $mid;
+
+        $message = ContactModel::find($mid);
+        if($message->delete()){
+            return redirect('messages')->with('msg', 'Message Deleted Successfully');
+        }        
+    }
+
+    public function edit($mid){
+        $message = ContactModel::Find($mid);
+        $data['single'] = $message;
+        return view('edit', $data);
+    }
+
+    public function update(Request $req, $id){
+        $contact = ContactModel::Find($id);
+
+        $messages = [
+            'name.required' => 'Enter Your Name',
+            'email.required' => 'Enter Your Email',
+        ];
+
+        $validate = $req->validate([
+            'name' => 'required|min:4',
+            'email' => 'required|email',
+            'subject' => 'required|min:3',
+            'message' => 'required|min:6',
+        ], $messages);
+
+        if($validate){
+            $data = [
+                'name' => $req->name,
+                'email' => $req->email,
+                'subject' => $req->subject,
+                'message' => $req->message
+            ];
+        }
+
+        $contact->update($data);
+        return redirect('messages')->with('msg', 'Message Update Successfully');
     }
 
 

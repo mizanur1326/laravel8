@@ -8,9 +8,13 @@
 
     <div class="container py-4">
         <h2>Messages List</h2>
-        <table class="table table-striped" >
+        @if(session('msg'))
+            <div class="alert alert-danger">{{session('msg')}}</div>
+        @endif
+            
+        <table class="table table-striped table-bordered" >
             <thead>
-                <tr style="border: 1px solid black">
+                <tr>
                     <td>ID</td>
                     <td>Name</td>
                     <td>Email</td>
@@ -21,13 +25,13 @@
             </thead>
             <tbody>
                 @foreach($messages as $message)
-                    <tr style="border: 1px solid black">
+                    <tr>
                         <td>{{$message->id}}</td>
                         <td>{{$message->name}}</td>
                         <td>{{$message->email}}</td>
                         <td>{{$message->subject}}</td>
                         <td>{{$message->message}}</td>
-                        <td><i class="fa-solid fa-pen-to-square"></i></td>
+                        <td><a href="messages/edit/{{$message->id}}"><button class="btn btn-primary">Edit</button></a> <a href="messages/delete/{{$message->id}}"><button class="btn btn-danger">Delete</button></a></td>
                     </tr>
                 @endforeach
             </tbody>

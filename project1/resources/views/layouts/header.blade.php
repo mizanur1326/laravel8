@@ -11,13 +11,13 @@
           <a class="nav-link" href="/">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about">ABOUT</a>
+          <a class="nav-link" href="/about">ABOUT</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact">CONTACT</a>
+          <a class="nav-link" href="/contact">CONTACT</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="messages">MESSAGES</a>
+          <a class="nav-link" href="/messages">MESSAGES</a>
         </li>
       </ul>
     </div>

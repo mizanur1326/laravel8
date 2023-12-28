@@ -1,0 +1,4 @@
+*********For Active DebugBar************
+composer require barryvdh/laravel-debugbar --dev
+
+composer create-project laravel/laravel:^8 evidence

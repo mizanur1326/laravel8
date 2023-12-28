@@ -20,8 +20,11 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('about', [HomeController::class, 'about']);
-Route::get('students', [HomeController::class, 'students']);
-Route::get('contact', [HomeController::class, 'contact']);
-Route::post('abc', [HomeController::class, 'store']);
-Route::get('messages', [HomeController::class, 'messages']);
+Route::get('/about', [HomeController::class, 'about']);
+Route::get('/students', [HomeController::class, 'students']);
+Route::get('/contact', [HomeController::class, 'contact']);
+Route::post('/abc', [HomeController::class, 'store']);
+Route::get('/messages', [HomeController::class, 'messages']);
+Route::get('/messages/delete/{mid}', [HomeController::class, 'delete']);
+Route::get('/messages/edit/{mid}', [HomeController::class, 'edit']);
+Route::post('/messages/update/{mid}', [HomeController::class, 'update']);
