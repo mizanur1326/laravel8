@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     // return view('backend.layouts.app');
     return view('backend.dashboard');
-});
+})->middleware('auth.basic');
 
 
 Route::get('/login', function () {
@@ -32,3 +32,4 @@ Route::get('/login', function () {
 
 
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout']);
