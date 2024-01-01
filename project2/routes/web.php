@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     // return view('backend.layouts.app');
     return view('backend.dashboard');
-})->middleware('auth.basic');
+})->middleware('userAuth');
 
 
 Route::get('/login', function () {
@@ -30,6 +30,16 @@ Route::get('/login', function () {
     return view('backend.login');
 });
 
+Route::get('/teacher', function(){
+    echo "Hello From Teache";
+});
 
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/student', function(){
+    echo "Hello From Student";
+});
+
+
+Route::post('/login', [LoginController::class, 'authenticate'])->middleware('userAuth');
 Route::get('/logout', [LoginController::class, 'logout']);
+
+

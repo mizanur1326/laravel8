@@ -33,7 +33,7 @@
                     <button type="submit" class="btn btn-primary hover-effect">Login</button>
                     <div>
                         <label class="font-weight-normal mb-0" style="cursor: pointer;">
-                        <input class="checkbox" type="checkbox" name="userRememberMe" required>
+                        <input class="checkbox" type="checkbox" name="userRememberMe">
                         Remember me
                         </label>
                         <a href="#" class="forgot-password float-right">Lost Password?</a>
